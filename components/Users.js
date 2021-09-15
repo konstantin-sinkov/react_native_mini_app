@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import {StyleSheet, Text, View, Button, TouchableOpacity, FlatList} from 'react-native';
 import {getUsers} from "../services/api.service";
+import User from "./User";
 
 
 export default function Users() {
@@ -11,8 +12,13 @@ export default function Users() {
       )
   }, [])
 
-  return (<View>
-        <Text>Users Page</Text>
+  return (
+      <View>
+        <FlatList
+            data={users}
+            renderItem={({item}) => <User item={item}/>}
+            keyExtractor={item => `${item.id}`} //key of item in str type
+        />
       </View>
   );
 }
