@@ -28,6 +28,6 @@ let styles = StyleSheet.create({
     align: {
         justifyContent: 'center',
         textAlign: 'center',
-        // alignItems: 'center'
+        alignItems: 'center'
     }
 });
